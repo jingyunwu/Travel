@@ -1,23 +1,34 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid"
+    "pages/statistics/statistics"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#ffffff",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#1c3e80",
+    "navigationBarTitleText": "番茄闹钟",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#b0b0b0",
+    "selectedColor": "#363636",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "计时",
+        "iconPath": "./img/time.png",
+        "selectedIconPath": "./img/time1.png"
+      },
+      {
+        "pagePath": "pages/statistics/statistics",
+        "text": "统计",
+        "iconPath": "./img/statistics.png",
+        "selectedIconPath": "./img/statistics1.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

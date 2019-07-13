@@ -1,3 +1,8 @@
+/* 第一个 */
+page {
+  width: 100%;
+  height: 100%;
+}
 .container {
   width: 100%;
   height: 100%;
@@ -14,3 +19,54 @@
   font-size: 13px;
   color: #888888;
 }
+.container .btn {
+  border-radius: 25px;
+  border: 1px solid #6078a5;
+  color: #6078a5;
+  width: 140px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 40px;
+}
+/* 第二个 */
+.container1 {
+  background: #254a89;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.container1 .voice {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 20px;  
+  right: 15px;
+  border: 1px solid #d1dceb;
+  padding: 5px;
+  border-radius: 50%;
+}
+.container1 .btn1 {
+  border-radius: 25px;
+  border: 1px solid #f1ffff;
+  width: 140px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 15px;
+  position: absolute;
+  top: 320px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.container1 .giveUp {
+  position: absolute;
+  top: 390px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 15px;
+  color: #ffffff;
+}
+
+/* 第三个 */

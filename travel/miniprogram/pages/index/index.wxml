@@ -1,6 +1,22 @@
-<view class="container">
+<view class="container" wx:if="{{ff === 1 }}">
   <h1 class="title">选择一个任务</h1>
   <p class="desc">在接下来的25分钟 , 专注做这件事</p>
   <Things></Things>
+  <view class="btn" bindtap="start">
+    开始计时
+  </view>
     
+</view>
+
+<view class="container1" wx:elif="{{ff === 2}}">
+  <image class="voice" src="{{stopVoice ? '../../img/noVoice.png':'../../img/voice.png'}}" bindtap="handleVoice"/>
+  <view class="btn1" style="background-color:{{stoptime ? '#ffffff':''}}; color:{{stoptime ? '#1d3e7c':'#fcffff'}}" bindtap="stopTime">
+    {{stoptime ? dec2:dec1}}
+  </view>
+  <text class="giveUp" bindtap="giveUp">放弃</text>
+    
+</view>
+
+<view class="container2" wx:else>
+
 </view>

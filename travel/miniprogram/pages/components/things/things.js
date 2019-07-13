@@ -13,6 +13,7 @@ Component({
   data: {
     cc: '#353535',
     jj: '#aeaeae',
+    id: 0,
     things: [
       {
         url: '../../../img/pack.png',

@@ -18,32 +18,38 @@ Component({
       {
         url: '../../../img/pack.png',
         thing: '工作',
-        color: '#6dbaf9'
+        bottom: '1px solid #6dbaf9',
+        right: '1px solid #eeeeee'
       },
       {
         url: '../../../img/book.png',
         thing: '学习',
-        color: '#7dd320'
+        bottom: '1px solid #7dd320',
+        right: '1px solid #eeeeee'
       },
       {
         url: '../../../img/think.png',
         thing: '思考',
-        color: '#fb9e0b'
+        bottom: '1px solid #fb9e0b',
+        right: ''
       },
       {
         url: '../../../img/write.png',
         thing: '写作',
-        color: '#3bd2e6'
+        bottom: '1px solid #3bd2e6',
+        right: '1px solid #eeeeee'
       },
       {
         url: '../../../img/running.png',
         thing: '运动',
-        color: '#968af1'
+        bottom: '1px solid #968af1',
+        right: '1px solid #eeeeee'
       },
       {
         url: '../../../img/read.png',
         thing: '阅读',
-        color: '#f64659'
+        bottom: '1px solid #f64659',
+        right: ''
       }
     ]
   },

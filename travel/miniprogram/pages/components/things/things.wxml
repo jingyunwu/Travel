@@ -1,7 +1,7 @@
 <!--pages/components/things/things.wxml-->
-<view class="cc">
+<view class="cc middleCC">
   <block wx:for="{{things}}" wx:key="index">
-    <view class="mm" bindtap="select" data-id="{{index}}" style="border-bottom-color: {{index == id ? item.color: ''}} ">
+    <view class="mm" bindtap="select" data-id="{{index}}" style="border-bottom: {{index == id ? item.bottom: ''}}; border-right: {{item.right}} ">
       <image class="img" src="{{item.url}}"/>
       <text class="dec" style="color: {{index == id ? cc:jj}}">{{item.thing}}</text>
     </view>  

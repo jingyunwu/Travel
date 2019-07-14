@@ -7,10 +7,18 @@
   flex-wrap: wrap;
   margin-top: 90px;
 }
+.middleCC::before{
+  content: '';
+  position: relative;
+  width: 300px;
+  height: 1px;
+  border-top: 1.5px solid #eeeeee;
+  top: 112px;
+  z-index: -1;
+}
 .cc .mm {
-  width: 98px;
+  width: 99px;
   height: 110px;
-  border: 1px solid #eeeeee;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,13 +30,6 @@
 }
 .mm .dec {
   font-size: 14px;
-  /* color: #aeaeae; */
   display: block;
   margin-top: 10px;
 }
-/* .mm .dec {
-  font-size: 14px;
-  color: #353535;
-  display: block;
-  margin-top: 10px;
-} */

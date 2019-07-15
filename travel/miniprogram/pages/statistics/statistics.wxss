@@ -1,1 +1,89 @@
 /* miniprogram/pages/statistics/statistics.wxss */
+.page {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  width: 100%;
+  height: 100%;
+}
+.container .title {
+  width: 100%;
+  height: 200rpx;
+  background: #ffffff;
+  color: #888888;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.title::before {
+  content: "";
+  width: 2rpx;
+  height: 120rpx;
+  background: #e6e6e6;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .content {
+  width: 100%;
+  height: 450rpx;
+  margin-top: 15rpx;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  font-size: 13px;
+  color: #3a3a3a;
+  position: relative;
+}
+.content::before {
+  content: "";
+  position: absolute;
+  top: 90rpx;
+  height: 2rpx;
+  width: 710rpx;
+  background: #e6e6e6;
+}
+.content .text1 {
+  position: absolute;
+  top: 25rpx;
+  left: 20rpx;
+}
+.content .text2 {
+  position: absolute;
+  top: 25rpx;
+  right: 20rpx;
+}
+
+.container .content1 {
+  width: 100%;
+  height: 450rpx;
+  margin-top: 15rpx;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  font-size: 13px;
+  color: #3a3a3a;
+  position: relative;
+}
+.content1::before {
+  content: "";
+  position: absolute;
+  top: 90rpx;
+  height: 2rpx;
+  width: 710rpx;
+  background: #e6e6e6;
+}
+.content1 .text1 {
+  position: absolute;
+  top: 25rpx;
+  left: 20rpx;
+}
+.content1 .text2 {
+  position: absolute;
+  top: 25rpx;
+  right: 20rpx;
+}

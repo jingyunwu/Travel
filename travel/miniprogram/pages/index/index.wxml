@@ -11,13 +11,21 @@
 <view class="container1" wx:else>
   <image class="voice" src="{{stopVoice ? '../../img/noVoice.png':'../../img/voice.png'}}" bindtap="handleVoice"/>
   <view class="circle">
-    <text class="js">{{text}}</text>
+    <text class="text">{{text}}</text>
+    <view class="time" wx:if="{{start}}">
+      {{time}}
+    </view>
+    <view class="end" wx:else></view>
     <canvas class="circle_bg" canvas-id="circleBg"></canvas>
     <canvas class="circle_progress" canvas-id="circleProgress"></canvas>
   </view>
-  <view class="btn1" style="background-color:{{stoptime ? '#ffffff':''}}; color:{{stoptime ? '#1d3e7c':'#fcffff'}}" bindtap="stopTime">
-    {{stoptime ? dec2:dec1}}
+  <view wx:if="{{start}}">
+    <view class="btn1" style="background-color:{{stoptime ? '#ffffff':''}}; color:{{stoptime ? '#1d3e7c':'#fcffff'}}" bindtap="stopTime">
+      {{stoptime ? dec2:dec1}}
+    </view>
+      <text class="giveUp" bindtap="giveUp">放弃</text>
   </view>
-  <text class="giveUp" bindtap="giveUp">放弃</text>
-    
+  <view class="btn2" bindtap="newStart" wx:else>
+    开始新番茄
+  </view>
 </view>

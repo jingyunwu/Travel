@@ -1,4 +1,15 @@
-<view class="">
-  小朋友
+<view class="container">
+  <view class="title">
+    <text>今日番茄数</text>
+    <text>累计番茄数</text>
+  </view>
+  <view class="content">
+    <text class="text1">今日完成</text>
+    <text class="text2">{{}}个番茄</text>
+  </view>
+  <view class="content1">
+    <text class="text1">最近一周完成</text>
+    <text class="text2">{{}}个番茄</text>
+  </view>
 </view>
   

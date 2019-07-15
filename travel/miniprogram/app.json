@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/statistics/statistics"
+    "pages/statistics/statistics",
+    "pages/index/index"
+    
   ],
   "window": {
     "backgroundColor": "#ffffff",

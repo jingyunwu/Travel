@@ -48,8 +48,8 @@ page {
   border-radius: 50%;
 }
 .container1 .circle {
-  width: 230px;
-  height: 230px;
+  width: 210px;
+  height: 210px;
   border-radius: 50%;
   border: 1px solid #ffffff;
   /* position: relative; */
@@ -57,11 +57,11 @@ page {
   top: 30%;
   left: 50%;
   transform: translate(-50%, -30%);
-  animation:moveCircle 2.5s linear infinite;
-  animation-play-state: running;
+  /* animation:moveCircle 2.5s linear infinite; */
+  /* animation-play-state: running; */
   z-index: 1;
 }
-@keyframes moveCircle {
+/* @keyframes moveCircle {
   0%{
     width: 230px;
     height: 230px;
@@ -92,29 +92,63 @@ page {
     height: 230px;
     border: 1px solid rgba(255, 255, 255, 0)
   }
-}
-.circle .js {
+} */
+.circle .text {
   position: absolute;
   font-size: 13px;
   color: #eee;
-  /* left: 23%; */
-  /* transform: translate(-50%, -10%); */
-  /* top: 10%; */
+  left: 50%;
+  transform: translate(-50%, -20%);
+  top: 20%;
+}
+.circle .time {
+  position: absolute;
+  font-size: 30px;
+  color: #eee;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.circle .end {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.end::before {
+  content: '';
+  position: absolute;
+  height: 30px;
+  width: 3px;
+  background: #eee;
+  transform: rotate(-45deg);
+  top: -20px;
+  left: -20px;
+  /* transform-origin:50% 50%; */
+}
+.end::after {
+  content: '';
+  position: absolute;
+  height: 60px;
+  width: 3px;
+  background: #eee;
+  transform: rotate(45deg);
+  top: -43px;
+  left: 12px;
+  /* transform-origin:50% 20%; */
 }
 .circle .circle_bg {
-  width: 230px;
-  height: 230px;
+  width: 210px;
+  height: 210px;
   position: absolute;
-  z-index: 2;
   /* left: 23%;
   top: 28%; */
   /* transform: translate(-50%, -50%); */
 }
 .circle .circle_progress {
-  width: 230px;
-  height: 230px;
+  width: 210px;
+  height: 210px;
   position: absolute;
-  z-index: 3;
   /* left: 23%; */
   /* top: 28%; */
   /* transform: translate(-50%, -50%); */
@@ -139,4 +173,18 @@ page {
   transform: translate(-50%, 0);
   font-size: 15px;
   color: #ffffff;
+}
+.container1 .btn2 {
+  border-radius: 25px;
+  width: 140px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 15px;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: #1d3e7c;
+  background-color: #ffffff;
 }

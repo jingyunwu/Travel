@@ -11,31 +11,49 @@ Page({
     dec2: '继续计时',
     count: 0,
     setTimer: null,
-    text: '计时中'
+    text: '计时中',
+    time: 6,
+    setTimer1: null
+  },
+  countTime: function() {
+    this.setTimer1 = setInterval(() => {
+      if(this.data.time > 0 && !this.data.stoptime) {
+        var time1 = this.data.time - 1;
+        this.setData({
+          time: time1
+        })
+      } else {
+        clearInterval(this.setTimer1);
+      }
+    }, 1000);
   },
   start: function() {
     setTimeout(this.drawCircleBg, 30);
-    if(!this.data.start && this.data.count === 0 && !this.data.stoptime) {
+    if(!this.data.start && this.data.count === 0 && this.data.time === 6 && !this.data.stoptime) {
       this.setData({
         ff: false,
         start: true,
       })
-      this.CountInterval(); 
+      this.CountInterval();
+      this.countTime(); 
     } else {
       this.setData({
         ff: false,
         start: true,
         count: 0,
         stoptime: false,
-        text: '计时中'
+        text: '计时中',
+        time: 6
       });
       this.CountInterval();
+      this.countTime(); 
     }
   },
   ifCount: function() {
     if (this.data.count === 60) {
       this.setData({
         text: '已完成',
+        start: false,
       })
     }
   },
@@ -57,7 +75,8 @@ Page({
         stoptime: false,
         text: '计时中'
       })
-      this.CountInterval();  
+      this.CountInterval();
+      this.countTime(); 
     } else {
       this.setData({
         stoptime: true,
@@ -76,13 +95,24 @@ Page({
       }) 
     }
   },
+  newStart: function() {
+    if(!this.data.start) {
+      this.setData({
+        ff: true,
+        stoptime: false,
+        text: '计时中',
+        count: 0,
+        time: 6
+      })
+    }
+  },
   drawCircleBg: function() {
     var ctx = wx.createCanvasContext('circleBg');
     ctx.setLineWidth(3);
     ctx.setStrokeStyle('#eef9ff');
     ctx.setLineCap('round');
     ctx.beginPath();
-    ctx.arc(115, 115, 100, 0, 2 * Math.PI, false);
+    ctx.arc(105, 105, 90, 0, 2 * Math.PI, false);
     ctx.stroke();
     ctx.draw();
   },
@@ -92,7 +122,7 @@ Page({
     ctx.setStrokeStyle('aqua');
     ctx.setLineCap('round');
     ctx.beginPath();
-    ctx.arc(115, 115, 100, -Math.PI/2, step*Math.PI-Math.PI/2, false);
+    ctx.arc(105, 105, 90, -Math.PI/2, step*Math.PI-Math.PI/2, false);
     ctx.stroke();
     ctx.draw();
   },
@@ -114,13 +144,5 @@ Page({
   onShow: function() {
     
   },
-  onReady: function() {
-    
-    // this.drawCircleProgress(1);
-    
-  }
-
-   
-    
 
 })

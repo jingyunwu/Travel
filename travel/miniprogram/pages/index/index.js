@@ -12,30 +12,19 @@ Page({
     count: 0,
     setTimer: null,
     text: '计时中',
-    // time: 6,
-    setTimer1: null
-  },
-  countTime: function() {
-    this.setTimer1 = setInterval(() => {
-      if(this.data.time > 0 && !this.data.stoptime) {
-        var time1 = this.data.time - 1;
-        this.setData({
-          time: time1
-        })
-      } else {
-        clearInterval(this.setTimer1);
-      }
-    }, 1000);
+    setTimer1: null,
+    n: 1500,
+    num: 0,
+    opacity: 1
   },
   start: function() {
     setTimeout(this.drawCircleBg, 30);
-    if(!this.data.start && this.data.count === 0 && this.data.time === 6 && !this.data.stoptime) {
+    if(!this.data.start && this.data.count === 0 && !this.data.stoptime) {
       this.setData({
         ff: false,
         start: true,
       })
-      this.CountInterval();
-      this.countTime(); 
+      this.CountInterval(); 
     } else {
       this.setData({
         ff: false,
@@ -43,17 +32,16 @@ Page({
         count: 0,
         stoptime: false,
         text: '计时中',
-        time: 6
       });
       this.CountInterval();
-      this.countTime(); 
     }
   },
   ifCount: function() {
-    if (this.data.count === 60) {
+    if (this.data.count === 1500) {
       this.setData({
         text: '已完成',
         start: false,
+        opacity: 0
       })
     }
   },
@@ -76,7 +64,7 @@ Page({
         text: '计时中'
       })
       this.CountInterval();
-      this.countTime(); 
+      // this.countTime(); 
     } else {
       this.setData({
         stoptime: true,
@@ -91,7 +79,9 @@ Page({
         start: false,
         stoptime: false,
         text: '计时中',
-        count: 0
+        count: 0,
+        n: 1500,
+        num: 0
       }) 
     }
   },
@@ -102,7 +92,9 @@ Page({
         stoptime: false,
         text: '计时中',
         count: 0,
-        time: 6
+        opacity: 1,
+        n: 1500,
+        num: 0
       })
     }
   },
@@ -126,22 +118,41 @@ Page({
     ctx.arc(105, 105, 90, -Math.PI/2, step*Math.PI-Math.PI/2, false);
     ctx.stroke();
     ctx.draw();
-    ctx.setFontSize(20)
+    var minute = parseInt((this.data.n - this.data.num) / 60)
+    if (minute < 10) {
+      minute = "0" + minute
+    }
+    var seconds = (this.data.n - this.data.num) % 60
+    if (seconds < 10) {
+      seconds = "0" + seconds
+    }
+    // 绘制倒计时文本
+
+    ctx.setLineWidth(1)
+    ctx.setFontSize(40)
+    ctx.setFillStyle('#ffffff')
     ctx.setTextAlign('center')
-    ctx.fillText('MINA', 100, 100)
+    ctx.setTextBaseline('middle')
+    ctx.setGlobalAlpha(this.data.opacity)
+    ctx.fillText(minute + ":" + seconds, 105, 105, 100)
+    ctx.fill()
+    
 
     ctx.draw(true)
+
+    // 每完成一次全程绘制就+1
+    this.data.num++;
   },
   CountInterval: function() {
     this.setTimer = setInterval(()=>{
-      if(this.data.count <= 60 && !this.data.stoptime) {
-        this.drawCircleProgress(this.data.count/(60/2));
+      if(this.data.count <= 1500 && !this.data.stoptime) {
+        this.drawCircleProgress(this.data.count/(1500/2));
         this.data.count++;
         this.ifCount();
       }else {
         clearInterval(this.setTimer);
       }   
-    },100);
+    },1000);
     
   },
   onLoad: function() {

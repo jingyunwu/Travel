@@ -12,10 +12,10 @@
   <image class="voice" src="{{stopVoice ? '../../img/noVoice.png':'../../img/voice.png'}}" bindtap="handleVoice"/>
   <view class="circle">
     <text class="text">{{text}}</text>
-    <view class="time" wx:if="{{start}}">
+    <!-- <view class="time" wx:if="{{start}}">
       {{time}}
-    </view>
-    <view class="end" wx:else></view>
+    </view> -->
+    <view class="end" wx:if="{{!start}}"></view>
     <canvas class="circle_bg" canvas-id="circleBg"></canvas>
     <canvas class="circle_progress" canvas-id="circleProgress"></canvas>
   </view>

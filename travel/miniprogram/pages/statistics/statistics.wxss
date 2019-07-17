@@ -30,7 +30,7 @@
 }
 .container .content {
   width: 100%;
-  height: 450rpx;
+  height: 500rpx;
   margin-top: 15rpx;
   background: #ffffff;
   display: flex;
@@ -57,10 +57,38 @@
   top: 25rpx;
   right: 20rpx;
 }
-
+.content .statistics {
+  position: absolute;
+  left: 130rpx;
+  top: 90rpx;
+}
+.content .kinds {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* align-items: center; */
+  bottom: 40rpx;
+  width: 100%;
+  position: absolute;
+}
+.kinds .kinds_s {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.kinds_s .color {
+  width: 15rpx;
+  height: 15rpx;
+}
+.kinds_s .kind {
+  color: #898989;
+  font-size: 10px;
+  display: block;
+  margin-left: 8rpx;
+}
 .container .content1 {
   width: 100%;
-  height: 450rpx;
+  height: 500rpx;
   margin-top: 15rpx;
   background: #ffffff;
   display: flex;
@@ -72,17 +100,23 @@
 .content1::before {
   content: "";
   position: absolute;
-  top: 90rpx;
   height: 2rpx;
   width: 710rpx;
   background: #e6e6e6;
+  margin-top: 93rpx;
 }
-.content1 .text1 {
+.content1 .text {
   position: absolute;
-  top: 25rpx;
+  top: 10rpx;
   left: 20rpx;
+  display: flex;
+  flex-direction: column;
 }
-.content1 .text2 {
+.text .text2 {
+  font-size: 8px;
+  color: #888888;
+}
+.content1 .text3 {
   position: absolute;
   top: 25rpx;
   right: 20rpx;

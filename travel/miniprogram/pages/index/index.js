@@ -12,7 +12,7 @@ Page({
     count: 0,
     setTimer: null,
     text: '计时中',
-    time: 6,
+    // time: 6,
     setTimer1: null
   },
   countTime: function() {
@@ -111,6 +111,7 @@ Page({
     ctx.setLineWidth(3);
     ctx.setStrokeStyle('#eef9ff');
     ctx.setLineCap('round');
+    ctx.setGlobalAlpha(0.2);
     ctx.beginPath();
     ctx.arc(105, 105, 90, 0, 2 * Math.PI, false);
     ctx.stroke();
@@ -125,6 +126,11 @@ Page({
     ctx.arc(105, 105, 90, -Math.PI/2, step*Math.PI-Math.PI/2, false);
     ctx.stroke();
     ctx.draw();
+    ctx.setFontSize(20)
+    ctx.setTextAlign('center')
+    ctx.fillText('MINA', 100, 100)
+
+    ctx.draw(true)
   },
   CountInterval: function() {
     this.setTimer = setInterval(()=>{

@@ -5,11 +5,28 @@
   </view>
   <view class="content">
     <text class="text1">今日完成</text>
-    <text class="text2">{{}}个番茄</text>
+    <text class="text2">{{todayNum}}个番茄</text>
+    <view class="statistics">
+      <canvas canvas-id="statistics"></canvas>
+    </view>
+    <view class="kinds" >
+      <view wx:for="{{kinds}}" wx:key="index" class="kinds_s">
+        <view class="color" style="background-color:{{item.bgColor}}"></view>
+        <text class="kind">{{item.kind}}</text>
+      </view>  
+    </view>
   </view>
   <view class="content1">
-    <text class="text1">最近一周完成</text>
-    <text class="text2">{{}}个番茄</text>
+    <view class="text">
+      <text class="text1">最近一周完成</text>
+      <text class="text2">平均每天{{averageNum}}个番茄</text>
+    </view>
+    <text class="text3">{{weekNum}}个番茄</text>
+    <view class="redStatistics">
+      <block wx:for="{{items}}">
+        <canvas class="red" canvas-id="redStatistics"></canvas> 
+      </block>
+    </view>
   </view>
 </view>
   

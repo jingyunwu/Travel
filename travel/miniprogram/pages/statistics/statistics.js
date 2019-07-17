@@ -5,14 +5,50 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    todayNum: 0,
+    averageNum: 0,
+    weekNum: 0,
+    kinds: [
+      {
+        bgColor: '#96bbff',
+        kind: '工作'
+      },
+      {
+        bgColor: '#80d128',
+        kind: '学习'
+      },
+      {
+        bgColor: '#ffa214',
+        kind: '思考'
+      },
+      {
+        bgColor: '#35d6eb',
+        kind: '写作'
+      },
+      {
+        bgColor: '#968bee',
+        kind: '运动'
+      },
+      {
+        bgColor: '#fb4557',
+        kind: '阅读'
+      }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var ctx = wx.createCanvasContext('statistics');
+    // ctx.setGlobalAlpha(1);
+    ctx.setLineCap('round');
+    ctx.setLineWidth(12);
+    ctx.setStrokeStyle('#f0f0f0');
+    ctx.beginPath();
+    ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+    ctx.stroke();
+    ctx.draw();
   },
 
   /**

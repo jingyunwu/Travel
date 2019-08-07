@@ -17,6 +17,10 @@ Page({
     num: 0,
     opacity: 1
   },
+  GetValue: function(e) {
+    // console.log(e);
+    e.detail.category
+  },
   start: function() {
     setTimeout(this.drawCircleBg, 30);
     if(!this.data.start && this.data.count === 0 && !this.data.stoptime) {

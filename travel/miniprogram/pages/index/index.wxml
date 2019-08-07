@@ -1,7 +1,7 @@
 <view class="container" wx:if="{{ff}}">
   <h1 class="title">选择一个任务</h1>
   <p class="desc">在接下来的25分钟 , 专注做这件事</p>
-  <Things></Things>
+  <Things bind:getValue="GetValue"></Things>
   <view class="btn" bindtap="start">
     开始计时
   </view>

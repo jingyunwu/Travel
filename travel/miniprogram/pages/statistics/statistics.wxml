@@ -23,7 +23,7 @@
     </view>
     <text class="text3">{{weekNum}}个番茄</text>
     <view class="redStatistics">
-      <block wx:for="{{items}}">
+      <block wx:for="{{items}}" wx:key="index">
         <canvas class="red" canvas-id="redStatistics"></canvas> 
       </block>
     </view>

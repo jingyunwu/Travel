@@ -19,37 +19,43 @@ Component({
         url: '../../../img/pack.png',
         thing: '工作',
         bottom: '1px solid #6dbaf9',
-        right: '1px solid #eeeeee'
+        right: '1px solid #eeeeee',
+        category: 'work'
       },
       {
         url: '../../../img/book.png',
         thing: '学习',
         bottom: '1px solid #7dd320',
-        right: '1px solid #eeeeee'
+        right: '1px solid #eeeeee',
+        category: 'learn'
       },
       {
         url: '../../../img/think.png',
         thing: '思考',
         bottom: '1px solid #fb9e0b',
-        right: ''
+        right: '',
+        category: 'reflection'
       },
       {
         url: '../../../img/write.png',
         thing: '写作',
         bottom: '1px solid #3bd2e6',
-        right: '1px solid #eeeeee'
+        right: '1px solid #eeeeee',
+        category: 'write'
       },
       {
         url: '../../../img/running.png',
         thing: '运动',
         bottom: '1px solid #968af1',
-        right: '1px solid #eeeeee'
+        right: '1px solid #eeeeee',
+        category: 'motion'
       },
       {
         url: '../../../img/read.png',
         thing: '阅读',
         bottom: '1px solid #f64659',
-        right: ''
+        right: '',
+        category: 'read'
       }
     ]
   },
@@ -61,10 +67,16 @@ Component({
     select(e) {
       // console.log(e);
       let that = this;
-      let id = e.currentTarget.dataset.id
+      let id = e.currentTarget.dataset.id;
+      var getCategory = {
+        category: that.data.things[id].category
+      }
+      that.triggerEvent("getValue", getCategory);
       that.setData({
         id
       }) 
+
     }
+
   }
 })

@@ -49,6 +49,23 @@ Page({
     ctx.arc(100, 75, 50, 0, 2 * Math.PI);
     ctx.stroke();
     ctx.draw();
+
+    // console.log(options)
+    wx.cloud.callFunction({
+      name: 'addToTotal',
+      data: {
+        
+      },
+      success:(e) => {
+        console.log('success')
+        this.setData({
+
+        })
+      },
+      fail: function(err) {
+        console.log(err)
+      }
+    })
   },
 
   /**

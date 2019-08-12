@@ -5,9 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    todayNum: 0,
-    averageNum: 0,
-    weekNum: 0,
+    todayNum: 0,  // 今天完成的番茄数
+    averageNum: 0, // 平均多少
+    weekNum: 0,  // 一个星期的
     kinds: [
       {
         bgColor: '#96bbff',

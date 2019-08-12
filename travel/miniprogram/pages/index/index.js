@@ -3,23 +3,22 @@ const app = getApp()
 
 Page({
   data: {
-    ff: true,
-    stopVoice: false,
-    stoptime: false,
-    start: false,
-    dec1: '暂停计时',
+    firstPage: true,  // 开始时候显示
+    stopVoice: false,  // 静音
+    stoptime: false, // 停止计时
+    start: false,  // 开始
+    dec1: '暂停计时',  
     dec2: '继续计时',
-    count: 0,
-    setTimer: null,
+    count: 0,  // 计时
+    setTimer: null,  //定时器
     text: '计时中',
-    setTimer1: null,
-    n: 1500,
+    n: 1500,  // 总时间
     num: 0,
     opacity: 1,
     logged: false,
-    category: null
+    category: null  // 哪个类型
   },
-  GetValue: function(e) {
+  GetValue: function(e) {  // 从子组件获取到 category
     // console.log(e);
     if(this.data.count === 1500) {
       this.setData({
@@ -28,17 +27,18 @@ Page({
     }
     
   },
-  start: function() {
+  start: function() {  // 开始
     setTimeout(this.drawCircleBg, 30);
+    this.audioCtx.play()
     if(!this.data.start && this.data.count === 0 && !this.data.stoptime) {
       this.setData({
-        ff: false,
+        firstPage: false,
         start: true,
       })
       this.CountInterval(); 
     } else {
       this.setData({
-        ff: false,
+        firstPage: false,
         start: true,
         count: 0,
         stoptime: false,
@@ -47,7 +47,7 @@ Page({
       this.CountInterval();
     }
   },
-  ifCount: function() {
+  ifCount: function() {  // 完成时的状态
     if (this.data.count === 1500) {
       this.setData({
         text: '已完成',
@@ -56,12 +56,14 @@ Page({
       })
     }
   },
-  handleVoice: function() {
+  handleVoice: function() { //
     if (this.data.stopVoice) {
+      this.audioCtx.play()
       this.setData({
         stopVoice: false
       })
     } else{
+      this.audioCtx.pause()
       this.setData({
         stopVoice: true
       })
@@ -70,6 +72,7 @@ Page({
   },
   stopTime: function() {
     if (this.data.stoptime) {
+      this.audioCtx.play()
       this.setData({
         stoptime: false,
         text: '计时中'
@@ -77,6 +80,7 @@ Page({
       this.CountInterval();
       // this.countTime(); 
     } else {
+      this.audioCtx.pause()
       this.setData({
         stoptime: true,
         text: '已暂停'
@@ -84,9 +88,10 @@ Page({
     }
   },
   giveUp: function() {
+    this.audioCtx.pause()
     if(this.data.start) {
       this.setData({
-        ff: true,
+        firstPage: true,
         start: false,
         stoptime: false,
         text: '计时中',
@@ -96,10 +101,11 @@ Page({
       }) 
     }
   },
-  newStart: function() {
+  newStart: function() {  // 新的开始
+    this.audioCtx.play()
     if(!this.data.start) {
       this.setData({
-        ff: true,
+        firstPage: true,
         stoptime: false,
         text: '计时中',
         count: 0,
@@ -109,7 +115,7 @@ Page({
       })
     }
   },
-  drawCircleBg: function() {
+  drawCircleBg: function() {  // 画圆
     var ctx = wx.createCanvasContext('circleBg');
     ctx.setLineWidth(3);
     ctx.setStrokeStyle('#eef9ff');
@@ -120,7 +126,7 @@ Page({
     ctx.stroke();
     ctx.draw();
   },
-  drawCircleProgress: function(step) {
+  drawCircleProgress: function(step) {  // 画动态的圆
     var ctx = wx.createCanvasContext('circleProgress');
     ctx.setLineWidth(5);
     ctx.setStrokeStyle('aqua');
@@ -182,7 +188,8 @@ Page({
           })
         }
       }
-    })
+    }),
+    this.audioCtx = wx.createAudioContext('myAudio')
   },
 
   onGetUserInfo: function(e) {

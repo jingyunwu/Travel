@@ -11,8 +11,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    cc: '#353535',
-    jj: '#aeaeae',
+    bottomColor1: '#353535',
+    bottomColor2: '#aeaeae',
     id: 0,
     things: [
       {
@@ -64,14 +64,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    select(e) {
+    select(e) {  // 选择category
       // console.log(e);
       let that = this;
       let id = e.currentTarget.dataset.id;
       var getCategory = {
         category: that.data.things[id].category
       }
-      that.triggerEvent("getValue", getCategory);
+      that.triggerEvent("getValue", getCategory);  // 给父组件传值
       that.setData({
         id
       }) 

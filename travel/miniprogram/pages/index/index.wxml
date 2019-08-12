@@ -1,4 +1,4 @@
-<view class="container" wx:if="{{ff}}">
+<view class="container" wx:if="{{firstPage}}">
   <h1 class="title">选择一个任务</h1>
   <p class="desc">在接下来的25分钟 , 专注做这件事</p>
   <Things bind:getValue="GetValue"></Things>
@@ -9,6 +9,7 @@
 </view>
 
 <view class="container1" wx:else>
+  <audio src="http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46" id="myAudio" loop></audio>
   <image class="voice" src="{{stopVoice ? '../../img/noVoice.png':'../../img/voice.png'}}" bindtap="handleVoice"/>
   <view class="circle">
     <text class="text">{{text}}</text>

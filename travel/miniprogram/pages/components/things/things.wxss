@@ -1,5 +1,5 @@
 /* pages/components/things/things.wxss */
-.cc {
+.thing {
   width: 300px;
   height: 220px;
   display: flex;
@@ -7,7 +7,7 @@
   flex-wrap: wrap;
   margin-top: 90px;
 }
-.middleCC::before{
+.middleThing::before{
   content: '';
   position: relative;
   width: 300px;
@@ -16,7 +16,7 @@
   top: 112px;
   z-index: -1;
 }
-.cc .mm {
+.thing .thing_bgc {
   width: 99px;
   height: 110px;
   display: flex;
@@ -24,11 +24,11 @@
   justify-content: center;
   align-items: center;
 }
-.mm .img {
+.thing_bgc .img {
   width: 26px;
   height: 26px;
 }
-.mm .dec {
+.thing_bgc .dec {
   font-size: 14px;
   display: block;
   margin-top: 10px;
